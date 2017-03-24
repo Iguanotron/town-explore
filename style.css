@@ -1,0 +1,33 @@
+/* temporary shared stylesheet */
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	font-family: "Arial Narrow", Arial, sans-serif;
+	font-size: 16px;
+	color: black;
+	background-color: tan;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 24px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.panel {
+	display: inline-block;
+	width: 400px;
+	max-height: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 15px;
+	border: solid 1px black;
+	overflow-y: scroll;
+}
+
+
