@@ -31,3 +31,19 @@ h1 {
 }
 
 
+.list-entry {
+	display: block;
+	clear: both;
+}
+
+.list-entry > .list-entry {
+	border-top: dotted 1px black;
+}
+
+.list-label {
+	float: left;
+}
+.list-value {
+	float: right;
+	clear: right;
+}
