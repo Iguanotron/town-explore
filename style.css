@@ -36,7 +36,7 @@ h1 {
 	clear: both;
 }
 
-.list-entry > .list-entry {
+.list-entry ~ .list-entry {
 	border-top: dotted 1px black;
 }
 

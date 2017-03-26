@@ -25,6 +25,9 @@ var TownController = {
 			gold: {
 				name: "Gold",
 			},
+			silver: {
+				name: "Silver",
+			},
 		},
 		activities: {
 			idle: {
@@ -52,6 +55,9 @@ var TownController = {
 		classes: {
 			archer: {
 				name: "Archer",
+			},
+			magician: {
+				name: "Magician",
 			},
 		},
 	},
@@ -122,15 +128,15 @@ var TownController = {
 		}
 	},
 	addHero: function (heroData) {
-		if ($T.state.roster[heroData.id]) {
+		if ($T.state.roster[heroData.heroId]) {
 			throw `Duplicate hero added to roster: ${heroData.id}`;
 		} else {
-			$T.state.roster[heroData.id] = heroData;
+			$T.state.roster[heroData.heroId] = heroData;
 			$T.makeHeroRosterEntry(heroData);
 		}
 	},
 	removeHero: function (heroId) {
-		delete $T.state.roster[heroData.id];
+		delete $T.state.roster[heroData.heroId];
 		$(`town-roster-hero-${heroId}`).remove();
 	},
 
@@ -230,6 +236,10 @@ var testSave = {
 			qty: 100,
 			yield: 1,
 		},
+		silver: {
+			qty: 10,
+			yield: 5,
+		},
 	},
 	roster: {
 		0: {
@@ -239,14 +249,21 @@ var testSave = {
 			class: 'archer',
 			inventory: {},
 		},
+		1: {
+			activity: 'research',
+			heroId: 1,
+			name: "Alice",
+			class: 'magician',
+			inventory: {},
+		},
 	},
 	buildings: {
 		library: {
 			upgrades: {
-				librarian: false,
+				librarian: true,
 			},
 			activities: {
-				research: false,
+				research: true,
 			},
 			yield: {
 				gold: 1,
